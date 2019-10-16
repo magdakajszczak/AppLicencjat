@@ -1,0 +1,8 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title, label: "Tytuł", hint: "Wypisz tytuł postu" %>
+  <%= f.input :body, label: "Treść", hint: "Wypisz treść postu" %>
+  <%= f.association :category, label: "Kategoria", prompt: "-- wybierz --" %>
+  <%= f.file_field :image %> 
+  <%= f.input :tag_ids, label: "Tag", as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
+ <%= f.submit button_name, class: "btn btn-primary" %></div>
+<% end %>
